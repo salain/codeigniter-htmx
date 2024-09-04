@@ -85,7 +85,7 @@ class Toolbar extends BaseToolbar
                 . $kintScript
                 . PHP_EOL;
 
-            if (str_contains($response->getBody(), '<head>')) {
+            if (str_contains($response->getBody() ?? '', '<head>')) {
                 $response->setBody(
                     preg_replace(
                         '/<head>/',
